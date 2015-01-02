@@ -7,11 +7,58 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
-" =============== Pathogen Initialization ===============
+" =============== Vundle Initialization ===============
+filetype off
 
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'tomtom/tlib_vim'
+Plugin 'wincent/Command-T'
+Plugin 'majutsushi/tagbar'
+
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Blackrush/vim-gocode'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'nvie/vim-flake8'
+Plugin 'jstemmer/gotags'
+Plugin 'dgryski/vim-godef'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tpope/vim-surround.git'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'MatchTag'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'mileszs/ack.vim'
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'DavidEGx/ctrlp-smarttabs'
+Plugin 'tpope/vim-commentary.git'
+Plugin 'rking/ag.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'mattn/emmet-vim'
+
+Plugin 'vitalk/vim-simple-todo'
+Plugin 'godlygeek/tabular.git'
+
+call vundle#end()
 
 " ================ General Config ====================
 
@@ -23,7 +70,6 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set hidden                      "Allow hidden buffers w/o windows
-set colorcolumn=85              "Show a color column at row 85
 set encoding=utf-8              "Necessary to show unicode glyphs
 
 "turn on syntax highlighting
