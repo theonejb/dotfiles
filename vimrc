@@ -10,13 +10,13 @@ endif
 " =============== Vundle Initialization ===============
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'fholgado/minibufexpl.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 
@@ -24,15 +24,21 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'wincent/Command-T'
 Plugin 'majutsushi/tagbar'
 
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'Blackrush/vim-gocode'
 Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'nvie/vim-flake8'
-Plugin 'jstemmer/gotags'
-Plugin 'dgryski/vim-godef'
+Bundle 'fisadev/vim-isort'
+Bundle 'vim-scripts/python.vim'
+
+Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
+Plugin 'Shutnik/jshint2.vim'
+Plugin 'leafgarland/typescript-vim'
+" Plugin 'clausreinke/typescript-tools.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'ternjs/tern_for_vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tpope/vim-surround.git'
@@ -40,22 +46,19 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'MatchTag'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'DavidEGx/ctrlp-smarttabs'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-commentary.git'
 Plugin 'rking/ag.vim'
-Plugin 'tacahiroy/ctrlp-funky'
 
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 
-Plugin 'vitalk/vim-simple-todo'
 Plugin 'godlygeek/tabular.git'
 
 call vundle#end()
@@ -107,9 +110,9 @@ set undofile
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 filetype plugin on
@@ -151,3 +154,6 @@ set sidescroll=1
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
   exe 'source' f
 endfor
+
+set exrc   " enable per-directory .vimrc files
+set secure " disable unsafe commands in local .vimrc files

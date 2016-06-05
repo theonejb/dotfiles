@@ -13,17 +13,13 @@ nmap <leader>vs :source ~/.vimrc<CR>
 nmap <D-t>      :tabnew<CR>
 nmap <leader>l  :tabnext<CR>
 nmap <leader>h  :tabprevious<CR>
-nmap <Right>    :tabnext<CR>
-nmap <Left>     :tabprevious<CR>
+" nmap <Right>    :tabnext<CR>
+" nmap <Left>     :tabprevious<CR>
 nmap <leader>tc :tabclose<CR>
 nmap <leader>te :tabedit<Space>
 nmap <leader>tf :tabm +1<CR>
 nmap <leader>tb :tabm -1<CR>
 nmap <leader>tm :tabm<Space>
-
-" allow easy movement between horizontal windows
-nnoremap <silent> H <C-w>h
-nnoremap <silent> L <C-w>l
 
 " easy way to run macro on visual selection
 vmap <leader>@ :normal @
@@ -47,14 +43,24 @@ map <silent> <D-6> :tabn 6<cr>
 map <silent> <D-7> :tabn 7<cr>
 map <silent> <D-8> :tabn 8<cr>
 map <silent> <D-9> :tabn 9<cr>
+
+"
+nnoremap <silent> H <C-w>h
+nnoremap <silent> L <C-w>l
+
 " Create window splits easier. The default
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
+
 " Resize windows with arrow keys
 nnoremap <D-Up> <C-w>+
 nnoremap <D-Down> <C-w>-
 nnoremap <D-Left> <C-w><
 nnoremap <D-Right>  <C-w>>
+
+" Diff options
+set diffopt=filler,vertical
+
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 

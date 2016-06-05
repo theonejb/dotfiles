@@ -1,6 +1,6 @@
 " Make it beautiful - colors and fonts
 "tell the term has 256 colors
-set t_Co=256
+"set t_Co=256
 
 " http://ethanschoonover.com/solarized/vim-colors-solarized
 let g:solarized_visibility="high"
@@ -9,7 +9,8 @@ set background=dark
 
 " Don't set the colorscheme in the quake like terminal
 if &term != "xterm"
-  colorscheme solarized
+  " colorscheme solarized
+  colorscheme molokai
 endif
 
 " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
