@@ -24,7 +24,7 @@ Plug 'junegunn/fzf'
 
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
-Plug 'jmcantrell/vim-virtualenv'
+" Plug 'jmcantrell/vim-virtualenv'
 Plug 'nvie/vim-flake8'
 Plug 'fisadev/vim-isort'
 
@@ -44,12 +44,12 @@ Plug 'MatchTag'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'rking/ag.vim'
 
-" snippets depend on snipmate
+" " snippets depend on snipmate
 Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 

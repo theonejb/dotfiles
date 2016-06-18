@@ -10,7 +10,8 @@ set background=dark
 " Don't set the colorscheme in the quake like terminal
 if &term != "xterm"
   " colorscheme solarized
-  colorscheme molokai
+  " colorscheme molokai
+  colorscheme onedark
 endif
 
 " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
