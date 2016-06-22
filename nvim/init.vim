@@ -21,6 +21,7 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'tomtom/tlib_vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
