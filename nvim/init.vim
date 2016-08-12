@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'fholgado/minibufexpl.vim'
 
+Plug 'dracula/vim'
+
 Plug 'tomtom/tlib_vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf'
@@ -58,6 +60,8 @@ Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 
 Plug 'godlygeek/tabular'
+
+Plug 'rakr/vim-one'
 
 function! DoRemote(arg)
   UpdateRemotePlugins

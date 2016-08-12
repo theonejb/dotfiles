@@ -1,6 +1,6 @@
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
 " jshint validation
 nnoremap <silent><F7> :JSHint<CR>
