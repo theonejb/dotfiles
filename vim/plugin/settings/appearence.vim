@@ -9,6 +9,8 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
+" The profile name is specific to my iTerm config. You should probably change
+" this to match the name of your own Light iTerm profile.
 if ($ITERM_PROFILE == "Light")
     set background=light
 else
