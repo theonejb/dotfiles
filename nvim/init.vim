@@ -28,10 +28,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'davidhalter/jedi-vim'
-" Plug 'jmcantrell/vim-virtualenv'
 Plug 'nvie/vim-flake8'
 Plug 'fisadev/vim-isort'
+Plug 'davidhalter/jedi-vim'
 
 Plug 'fatih/vim-go'
 Plug 'Shutnik/jshint2.vim'
@@ -39,6 +38,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'digitaltoad/vim-pug'
 Plug 'ternjs/tern_for_vim'
+Plug 'scrooloose/syntastic'
+Plug 'lepture/vim-jinja'
+Plug 'sbdchd/neoformat'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tpope/vim-surround'
@@ -49,7 +51,6 @@ Plug 'MatchTag'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
-" Plug 'vim-scripts/YankRing.vim'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -67,6 +68,10 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
+Plug 'carlitux/deoplete-ternjs'
 
 call plug#end()
 

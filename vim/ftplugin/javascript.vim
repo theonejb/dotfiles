@@ -16,3 +16,5 @@ vnoremap <silent><F8> :lnext<CR>
 nnoremap <silent><F9> :lprevious<CR>
 inoremap <silent><F9> <C-O>:lprevious<CR>
 vnoremap <silent><F9> :lprevious<CR>
+
+nnoremap <silent> <buffer> <leader>d :TernDef<CR>

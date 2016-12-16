@@ -6,3 +6,5 @@ let g:ctrlp_working_path_mode=0
 
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_matchtype = 'path'
+
+let g:ctrlp_cmd = 'CtrlPBuffer'
