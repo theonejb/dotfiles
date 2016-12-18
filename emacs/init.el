@@ -1,5 +1,5 @@
 (setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
+(setq mac-option-modifier 'super)
 
 (when window-system (set-frame-size (selected-frame) 125 45))
 
@@ -10,13 +10,12 @@
   (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
 
-(require 'neotree)
 (setq neo-window-width 40)
 (global-set-key (kbd "C-`") 'neotree-toggle)
 
-(require 'all-the-icons)
 (setq neo-theme 'icons)
 
+(set-face-attribute 'default nil :height 140)
 (load-theme 'zerodark t)
 
 (require 'linum-relative)
@@ -24,7 +23,6 @@
 (global-linum-mode t)
 
 ; Jedi level stuff!
-(require 'virtualenvwrapper)
 (add-hook 'python-mode-hook (lambda ()
 			      (defun workon-setup ()
 				"Switch the virtual env and stop the Jedi server so it starts with the correct env"
@@ -38,7 +36,6 @@
 (setq jedi:environment-root "jedi-p2")
 (add-hook 'python-mode-hook 'jedi:setup)
 
-(require 'helm-config)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
@@ -49,7 +46,6 @@
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -57,6 +53,9 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(add-hook 'web-mode-hook (lambda ()
+			   (emmet-mode)))
 
 (sml/setup)
 
@@ -70,3 +69,22 @@
 ; Reroute autosave and backup files to temp folder
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
+(windmove-default-keybindings)
+(global-set-key (kbd "S-M-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-M-<down>") 'shrink-window)
+(global-set-key (kbd "S-M-<up>") 'enlarge-window)
+
+(global-set-key (kbd "C-c s") (lambda ()
+				(interactive)
+				(split-window-vertically)
+				(other-window 1)
+				(eshell "new")))
+(defun eshell/x ()
+  (insert "exit")
+  (eshell-send-input)
+  (delete-window))
+
+(global-set-key (kbd "C-c n") (lambda ()
+				(interactive)
+				(find-file "/Users/asadjb/Dropbox/orgmode/notes.org")))
