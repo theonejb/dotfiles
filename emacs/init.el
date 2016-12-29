@@ -29,8 +29,8 @@
 				(interactive)
 				(venv-workon)
 				(jedi:stop-server))
-			      (local-set-key (kbd "C-c v") 'workon-setup)))
-(setq mode-line-format (cons '(:exec venv-current-name) mode-line-format))
+			      (local-set-key (kbd "C-c v") 'workon-setup)
+			      (flycheck-mode)))
 
 (venv-initialize-interactive-shells)
 (venv-initialize-eshell)
@@ -64,6 +64,12 @@
 			   (emmet-mode)))
 
 (sml/setup)
+(delight '(
+           (helm-mode)
+           (projectile-mode " P" projectile)
+           (superword-mode nil subword)
+           (paredit-mode " (" paredit)
+           ))
 
 (global-set-key (kbd "C-c i") (lambda ()
 				"Edit the ~/.emacs.d/init.el file"
@@ -97,6 +103,11 @@
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(setq-default indent-tabs-mode nil)
+
+(add-hook 'prog-mode-hook 'auto-complete-mode)
+(add-hook 'prog-mode-hook 'superword-mode)
+
 (defun duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
@@ -106,3 +117,12 @@
   (next-line 1)
   (yank))
 (global-set-key (kbd "C-c C-d") 'duplicate-line)
+
+(defun create-line-below()
+  (interactive)
+  (move-end-of-line 1)
+  (open-line 1)
+  (next-line 1))
+(global-set-key (kbd "C-o") 'create-line-below)
+
+(add-hook 'clojure-mode-hook 'paredit-mode)

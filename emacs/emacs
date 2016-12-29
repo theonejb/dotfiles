@@ -17,7 +17,7 @@
     ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (py-isort expand-region yasnippet ac-emmet smart-mode-line helm-projectile projectile helm helm-ag web-mode magit virtualenvwrapper jedi linum-relative zerodark-theme all-the-icons exec-path-from-shell neotree))))
+    (delight rainbow-delimiters paredit cider clojure-mode yaml-mode ag flycheck py-isort expand-region yasnippet ac-emmet smart-mode-line helm-projectile projectile helm helm-ag web-mode magit virtualenvwrapper jedi linum-relative zerodark-theme all-the-icons exec-path-from-shell neotree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
