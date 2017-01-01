@@ -126,3 +126,5 @@
 (global-set-key (kbd "C-o") 'create-line-below)
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'lisp-mode 'rainbow-delimiters-mode)
