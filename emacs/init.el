@@ -21,23 +21,7 @@
 (require 'linum-relative)
 (linum-relative-on)
 (global-linum-mode t)
-
-; Jedi level stuff!
-(add-hook 'python-mode-hook (lambda ()
-			      (defun workon-setup ()
-				"Switch the virtual env and stop the Jedi server so it starts with the correct env"
-				(interactive)
-				(venv-workon)
-				(jedi:stop-server))
-			      (local-set-key (kbd "C-c v") 'workon-setup)
-			      (flycheck-mode)))
-
-(venv-initialize-interactive-shells)
-(venv-initialize-eshell)
-
-(setq jedi:complete-on-dot t)
-(setq jedi:environment-root "jedi-p2")
-(add-hook 'python-mode-hook 'jedi:setup)
+(setq linum-format "%3d")
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -58,10 +42,15 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
 (add-hook 'web-mode-hook (lambda ()
-			   (emmet-mode)))
+                           (emmet-mode)))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (equal web-mode-content-type "jsx")
+              (setq web-mode-enable-auto-quoting nil))))
 
 (sml/setup)
 (delight '(
@@ -72,9 +61,9 @@
            ))
 
 (global-set-key (kbd "C-c i") (lambda ()
-				"Edit the ~/.emacs.d/init.el file"
-				(interactive)
-				(find-file "~/.emacs.d/init.el")))
+                                "Edit the ~/.emacs.d/init.el file"
+                                (interactive)
+                                (find-file "~/.emacs.d/init.el")))
 
 (show-paren-mode 1)
 
@@ -88,22 +77,19 @@
 (global-set-key (kbd "S-M-<up>") 'enlarge-window)
 
 (global-set-key (kbd "C-c s") (lambda ()
-				(interactive)
-				(split-window-vertically)
-				(other-window 1)
-				(eshell "new")))
+                                (interactive)
+                                (split-window-vertically)
+                                (other-window 1)
+                                (eshell "new")))
 (defun eshell/x ()
   (insert "exit")
   (eshell-send-input)
   (delete-window))
 
-(global-set-key (kbd "C-c n") (lambda ()
-				(interactive)
-				(find-file "/Users/asadjb/Dropbox/orgmode/notes.org")))
-
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 (setq-default indent-tabs-mode nil)
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 (add-hook 'prog-mode-hook 'superword-mode)
@@ -128,3 +114,23 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'lisp-mode 'rainbow-delimiters-mode)
+
+(autoload 'ledger-mode "ledger-mode" "A major mode for Ledger" t)
+(add-to-list 'load-path
+             (expand-file-name "/usr/local/Cellar/ledger/3.1.1_5/share/emacs/site-lisp/ledger/"))
+(add-to-list 'auto-mode-alist '("\\.journal$" . ledger-mode))
+
+(add-hook 'org-mode-hook (lambda ()
+                           (interactive)
+                           (linum-relative-off)))
+
+(global-set-key (kbd "C-c n") (lambda ()
+                                (interactive)
+                                (find-file "/Users/asadjb/Dropbox/orgmode/notes.org")))
+
+(global-set-key (kbd "C-c w") (lambda ()
+                                (interactive)
+                                (find-file "/Users/asadjb/Programming/Felix/notes.org")))
+
+(setq inhibit-startup-screen t)
+(find-file "~/Dropbox/orgmode/notes.org")
