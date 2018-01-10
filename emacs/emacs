@@ -17,7 +17,7 @@
     ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (auto-complete go-mode paradox delight rainbow-delimiters paredit cider clojure-mode clojure-mode-extra-font-locking smex ag expand-region smart-mode-line helm-projectile projectile helm helm-ag web-mode magit linum-relative zerodark-theme all-the-icons exec-path-from-shell neotree)))
+    (ledger-mode auto-complete go-mode paradox delight rainbow-delimiters paredit cider clojure-mode clojure-mode-extra-font-locking smex ag expand-region smart-mode-line helm-projectile projectile helm helm-ag web-mode magit linum-relative zerodark-theme all-the-icons exec-path-from-shell neotree)))
  '(paradox-github-token t))
 
 (custom-set-faces
