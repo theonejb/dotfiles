@@ -42,6 +42,8 @@
 (setq mac-option-modifier 'super)
 (exec-path-from-shell-initialize)
 
+(load-file "~/.emacs.d/secrets.el")
+
 (push "~/.emacs.d/scripts/" load-path)
 
 (ivy-mode 1)
@@ -130,9 +132,6 @@
 			      ("t" "Todo" entry (file+headline "~/Dropbox/orgmode/notes.org" "Tasks") "* TODO %?\n  %t")
 			      ("d" "Todo with deadline" entry (file+headline "~/Dropbox/orgmode/notes.org" "Tasks") "* TODO %?\n  DEADLINE: %t")
 			      ))
-
-;; Ledger Keeper intergration
-(setq lkeep-auth-headers '(("Authorization" . "token 81140696de65d5b0009f9435378b159047a9d9b5")))
 
 (require 'request)
 (defun journal-delete-data
