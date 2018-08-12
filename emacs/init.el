@@ -42,7 +42,7 @@
 (setq mac-option-modifier 'super)
 (exec-path-from-shell-initialize)
 
-(load-file "~/.emacs.d/secrets.el")
+(load-file "~/.emacs.d/locals.el")
 
 (push "~/.emacs.d/scripts/" load-path)
 
@@ -76,9 +76,6 @@
 (require 'iy-go-to-char)
 (global-set-key (kbd "C-c f") 'iy-go-up-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
-
-;; Environment variables for ledger
-(setenv "LEDGER_FILE" "/Users/asadjb/Dropbox/Ledgers/current.journal")
 
 ;; Easier paren editing
 (show-paren-mode 1)
