@@ -85,7 +85,12 @@
 
 ;; Projectile mode with Counsel/Ivy integration
 (projectile-mode)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(setq projectile-keymap-prefix (kbd "C-c p"))
 (counsel-projectile-mode)
+(setq projectile-indexing-method 'native)
 
 ;; Easy access to commonly accessed files
 (global-set-key (kbd "C-c j") (lambda ()
