@@ -37,6 +37,7 @@
  )
 
 (setq inhibit-startup-screen t)
+(set-face-attribute 'default nil :height 120)
 
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
