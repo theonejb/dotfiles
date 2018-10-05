@@ -1,0 +1,7 @@
+emacs/elpa/
+\#*\#
+emacs/eshell/history
+*~
+emacs/projectile-bookmarks.eld
+emacs/request
+emacs/locals.el
