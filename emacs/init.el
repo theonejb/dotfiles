@@ -26,7 +26,7 @@
     ("~/Dropbox/orgmode/agile-leaf.org" "~/Dropbox/orgmode/felix.org" "~/Dropbox/orgmode/thestoicmuslim.org" "~/Dropbox/orgmode/shoes.org" "~/Dropbox/orgmode/notes.org")))
  '(package-selected-packages
    (quote
-    (which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell ledger-mode company zenburn-theme ivy)))
+    (stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell ledger-mode company zenburn-theme ivy)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838"))))
 
 (custom-set-faces
@@ -35,6 +35,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(which-key-mode)
 
 (setq inhibit-startup-screen t)
 (set-face-attribute 'default nil :height 120)
@@ -181,7 +183,7 @@
 	 (remaining-credit-string (read-string "Remaining credit limit:"))
 	 (cleaned-credit-string (replace-regexp-in-string "," "" remaining-credit-string))
 	 (owed-amount (- (string-to-number cleaned-credit-string) limit)))
-    (insert (number-to-string owed-amount))))
+    (insert (format "%.2f" owed-amount))))
 (defun remaining-unbudgeted-amount (remaining-balance-string)
   (interactive "sCurrent balance: ")
   (let* ((cleaned-balance-string (replace-regexp-in-string "," "" remaining-balance-string))
@@ -190,7 +192,7 @@
 	 (budgeted-amount-string (shell-command-to-string "hledger bal '^assets:cash:nbd' 'not:^assets:cash:nbd:unbudgeted$' --format='%-(total)' | tail -1"))
 	 (cleaned-budgeted-amount-string (replace-regexp-in-string "," "" (nth 1 (split-string budgeted-amount-string))))
 	 (budgeted-amount (string-to-number cleaned-budgeted-amount-string)))
-    (insert (number-to-string (- balance-amount budgeted-amount)))))
+    (insert (format "%.2f" (- balance-amount budgeted-amount)))))
 
 (add-hook 'ledger-mode-hook (lambda ()
 			      (local-set-key (kbd "C-c u") 'update-journal-from-lkeep)
