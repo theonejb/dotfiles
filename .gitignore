@@ -5,3 +5,5 @@ emacs/eshell/history
 emacs/projectile-bookmarks.eld
 emacs/request
 emacs/locals.el
+emacs/eshell/lastdir
+emacs/projectile.cache
