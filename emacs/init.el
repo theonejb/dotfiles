@@ -26,7 +26,7 @@
     ("~/Dropbox/orgmode/shoes.org" "~/Dropbox/orgmode/agile-leaf.org" "~/Dropbox/orgmode/felix.org" "~/Dropbox/orgmode/thestoicmuslim.org" "~/Dropbox/orgmode/notes.org")))
  '(package-selected-packages
    (quote
-    (hledger-mode geiser stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell company zenburn-theme ivy)))
+    (ledger-mode geiser stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell company zenburn-theme ivy)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838"))))
 
 (custom-set-faces

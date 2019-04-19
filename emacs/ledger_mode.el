@@ -1,10 +1,11 @@
-(require 'request)
-
 ;; Auto mode alist for Ledger files
-(add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
-(add-hook 'hledger-mode-hook (lambda ()
-			      (local-unset-key (kbd "M-c"))
-			      ))
+(add-to-list 'auto-mode-alist '("\\.journal\\'" . ledger-mode))
+(add-hook 'ledger-mode-hook (lambda ()
+			       (local-unset-key (kbd "M-c"))
+			       ))
+
+(setq ledger-binary-path "hledger")
+(setq ledger-mode-should-check-version nil)
 
 (defun credit-card-remaining-limit ()
   (interactive)
@@ -40,7 +41,7 @@
 	(newline-and-indent))
       )))
 
-(add-hook 'hledger-mode-hook (lambda ()
+(add-hook 'ledger-mode-hook (lambda ()
 			      (local-set-key (kbd "C-c s") 'account-shortcode->entry)
 			      (local-set-key (kbd "C-c c") 'credit-card-remaining-limit)
 			      (local-set-key (kbd "C-c b") 'remaining-unbudgeted-amount)
