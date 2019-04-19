@@ -7,3 +7,4 @@ emacs/request
 emacs/locals.el
 emacs/eshell/lastdir
 emacs/projectile.cache
+emacs/transient

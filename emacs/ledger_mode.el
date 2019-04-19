@@ -1,5 +1,11 @@
 (require 'request)
 
+;; Auto mode alist for Ledger files
+(add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
+(add-hook 'ledger-mode-hook (lambda ()
+			      (local-unset-key (kbd "M-c"))
+			      ))
+
 (defun journal-delete-data
     ()
   (if (y-or-n-p "Delete transactions in Ledger Keeper? ")

@@ -23,10 +23,10 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
-    ("~/Dropbox/orgmode/agile-leaf.org" "~/Dropbox/orgmode/felix.org" "~/Dropbox/orgmode/thestoicmuslim.org" "~/Dropbox/orgmode/shoes.org" "~/Dropbox/orgmode/notes.org")))
+    ("~/Dropbox/orgmode/shoes.org" "~/Dropbox/orgmode/agile-leaf.org" "~/Dropbox/orgmode/felix.org" "~/Dropbox/orgmode/thestoicmuslim.org" "~/Dropbox/orgmode/notes.org")))
  '(package-selected-packages
    (quote
-    (geiser stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell ledger-mode company zenburn-theme ivy)))
+    (hledger-mode geiser stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell company zenburn-theme ivy)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838"))))
 
 (custom-set-faces
@@ -58,12 +58,6 @@
 ;; Company mode settings
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'company-mode-hook (lambda () (local-set-key (kbd "M-c") 'company-complete)))
-
-;; Auto mode alist for Ledger files
-(add-to-list 'auto-mode-alist '("\\.journal\\'" . ledger-mode))
-(add-hook 'ledger-mode-hook (lambda ()
-			      (local-unset-key (kbd "M-c"))
-			      ))
 
 ;; Switch Window
 (require 'switch-window)
