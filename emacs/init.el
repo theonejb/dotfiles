@@ -1,3 +1,5 @@
+(setq shell-file-name "/bin/zsh")
+
 (setq exec-path-from-shell-check-startup-files nil)
 
 (require 'package)
@@ -23,10 +25,10 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
-    ("~/Dropbox/orgmode/shoes.org" "~/Dropbox/orgmode/agile-leaf.org" "~/Dropbox/orgmode/felix.org" "~/Dropbox/orgmode/thestoicmuslim.org" "~/Dropbox/orgmode/notes.org")))
+    ("~/Dropbox/orgmode/devcon.org" "~/Dropbox/orgmode/shoes.org" "~/Dropbox/orgmode/agile-leaf.org" "~/Dropbox/orgmode/felix.org" "~/Dropbox/orgmode/thestoicmuslim.org" "~/Dropbox/orgmode/notes.org")))
  '(package-selected-packages
    (quote
-    (ledger-mode geiser stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell company zenburn-theme ivy)))
+    (all-the-icons-dired dired-sidebar parinfer ledger-mode geiser stripe-buffer which-key request lua-mode expand-region counsel-projectile projectile cider paredit switch-window all-the-icons zerodark-theme exec-path-from-shell company zenburn-theme ivy)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838"))))
 
 (custom-set-faces
@@ -39,7 +41,7 @@
 (which-key-mode)
 
 (setq inhibit-startup-screen t)
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 130)
 
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
@@ -145,3 +147,4 @@
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 
 (load-file "~/.emacs.d/ledger_mode.el")
+(load-file "~/.emacs.d/geiser.el")
