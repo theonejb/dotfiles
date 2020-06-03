@@ -12,7 +12,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (which-key eglot elixir-mode exec-path-from-shell counsel ivy one-themes atom-one-dark-theme))))
+    (counsel-projectile company magit which-key eglot elixir-mode exec-path-from-shell counsel ivy one-themes atom-one-dark-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,12 +20,10 @@
  ;; If there is more than one, they won't work right.
  )
 
-(global-set-key (kbd "M-.") 'completion-at-point)
-
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
-
   (setq mac-option-modifier 'super)
+
   (exec-path-from-shell-initialize))
 
 (load-theme 'one-dark t)
@@ -53,6 +51,18 @@
 
 (require 'eglot)
 (add-hook 'elixir-mode-hook 'eglot-ensure)
-(add-to-list 'eglot-server-programs '(elixir-mode "/Users/asadjb/Programming/Elixir/elixir-ls/release/language_server.sh"))
+(if (eq system-type 'darwin)
+    (add-to-list 'eglot-server-programs '(elixir-mode "/Users/asadjb/Programming/Elixir/elixir-ls/release/language_server.sh"))
+  (add-to-list 'eglot-server-programs '(elixir-mode "/home/asadjb/Programming/Elixir/elixir-ls/release/language_server.sh")))
 
 (which-key-mode)
+
+(add-hook 'after-init-hook 'global-company-mode)
+(global-set-key (kbd "M-.") 'company-complete)
+
+(projectile-mode +1)
+(counsel-projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(global-set-key (kbd "C-:") 'avy-goto-char)
