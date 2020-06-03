@@ -12,7 +12,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (eglot elixir-mode exec-path-from-shell counsel ivy one-themes atom-one-dark-theme))))
+    (which-key eglot elixir-mode exec-path-from-shell counsel ivy one-themes atom-one-dark-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,6 +24,7 @@
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
+
   (setq mac-option-modifier 'super)
   (exec-path-from-shell-initialize))
 
@@ -53,3 +54,5 @@
 (require 'eglot)
 (add-hook 'elixir-mode-hook 'eglot-ensure)
 (add-to-list 'eglot-server-programs '(elixir-mode "/Users/asadjb/Programming/Elixir/elixir-ls/release/language_server.sh"))
+
+(which-key-mode)
