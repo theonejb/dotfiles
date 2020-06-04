@@ -12,7 +12,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (counsel-projectile company magit which-key eglot elixir-mode exec-path-from-shell counsel ivy one-themes atom-one-dark-theme))))
+    (yasnippet-snippets yasnippet counsel-projectile company magit which-key eglot elixir-mode exec-path-from-shell counsel ivy one-themes atom-one-dark-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -60,9 +60,13 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (global-set-key (kbd "M-.") 'company-complete)
 
+(global-set-key (kbd "C-.") 'xref-find-definitions)
+
 (projectile-mode +1)
 (counsel-projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (global-set-key (kbd "C-:") 'avy-goto-char)
+
+(yas-global-mode)
