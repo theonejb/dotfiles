@@ -15,11 +15,3 @@ plugins=(common-aliases tmux)
 source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
-
-alias alif='awless list instances --filter'
-
-path=("$HOME/.rvm/bin" "/opt/homebrew/opt/ruby/bin" $path)
-export PATH
-
-ZSH_TMUX_FIXTERM=false
-export ZSH_TMUX_FIXTERM
