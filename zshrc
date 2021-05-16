@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/asadjb/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Disable theme because we are using the Pure prompt
 ZSH_THEME=""
@@ -10,29 +10,24 @@ plugins=(common-aliases tmux)
 source $ZSH/oh-my-zsh.sh
 
 # Pure prompt
-fpath=( "$HOME/.pure-prompt" $fpath )
-autoload -U promptinit; promptinit
-prompt pure
+#fpath=( "$HOME/.pure-prompt" $fpath )
+#autoload -U promptinit; promptinit
+#prompt pure
+
+
+eval "$(starship init zsh)"
 
 # User config below here
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-path+=('/Users/asadjb/.local/bin' '/Users/asadjb/Programming/go/bin')
+path+=("$HOME/.platformio/penv/bin"  "$HOME/.local/bin" "$HOME/Programming/go/bin" "$HOME/snap/flutter/common/flutter/bin")
 
 alias hl=hledger
 export LEDGER_FILE=~/Dropbox/Ledgers/current.journal
 
 alias vim=nvim
-
-# Android SDK setup for Ionic
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-path+=('$ANDROID_SDK_ROOT/tools/bin' '$ANDROID_SDK_ROOT/platform-tools' '$ANDROID_SDK_ROOT/emulator' '$ANDROID_SDK_ROOT/build-tools/28.0.3')
-#export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-#export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-#export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-#export PATH=$PATH:$ANDROID_SDK_ROOT/build-tools/28.0.3/
 
 function setup_jenv() {
     export PATH="$HOME/.jenv/bin:$PATH"
@@ -41,7 +36,7 @@ function setup_jenv() {
 
 function setup_nvm() {
     export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 }
 
 # Awless aliases
@@ -73,6 +68,16 @@ export GOPATH='/Users/asadjb/Programming/go'
 
 export PATH
 
-[ -s "/Users/asadjb/.shell-no-scm" ] && source "/Users/asadjb/.shell-no-scm" 
+export PATH="/home/asadjb/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-[ -s "/Users/asadjb/.scm_breeze/scm_breeze.sh" ] && source "/Users/asadjb/.scm_breeze/scm_breeze.sh"
+fpath+=~/.zsh_functions
+
+[ -s "$HOME/.shell-no-scm" ] && source "$HOME/.shell-no-scm" 
+
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
