@@ -86,6 +86,7 @@
           casks = [
             "ghostty"
             "orbstack"
+            "scroll-reverser"
           ];
       };
 
