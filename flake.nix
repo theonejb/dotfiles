@@ -87,6 +87,12 @@
             "ghostty"
             "orbstack"
             "scroll-reverser"
+            "todoist-app"
+            # Already installed in current setup but leaving
+            # here for next time
+            # "1password"
+            # "whatsapp"
+            # "setapp"
           ];
       };
 
