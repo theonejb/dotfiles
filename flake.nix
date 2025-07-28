@@ -29,6 +29,14 @@
         nixpkgs.hostPlatform = "aarch64-darwin";
         nixpkgs.config.allowUnfree = true;
 
+        nixpkgs.overlays = [
+          (self: super: {
+            ruby = super.ruby.override {
+              yamlSupport = true;
+            };
+          })
+        ];
+
         # Declare the user that will be running `nix-darwin`.
         users.users.jibran = {
             name = "jibran";
@@ -45,6 +53,8 @@
           # Other dev utils
           pkgs.zellij
           pkgs.direnv
+          pkgs.devenv
+          pkgs.git-lfs
           # For Lazyvim
           pkgs.neovim
           pkgs.lazygit
@@ -54,9 +64,10 @@
           # Langs
           pkgs.cargo
           pkgs.nodejs_24
-          pkgs.ruby
           pkgs.uv
+          pkgs.ruby
           pkgs.python313
+          pkgs.biome
           # Mac Apps
           pkgs.rectangle
           pkgs.obsidian
@@ -73,7 +84,8 @@
           ];
 
           casks = [
-            "ghostty" # Not available as a nixpkg on darwin unfortunately
+            "ghostty"
+            "orbstack"
           ];
       };
 
