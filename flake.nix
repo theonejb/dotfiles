@@ -72,6 +72,7 @@
           pkgs.rectangle
           pkgs.obsidian
           pkgs.vscode
+          pkgs.zoom-us
       ];
 
       homebrew = {
