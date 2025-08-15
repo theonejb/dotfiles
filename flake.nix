@@ -5,13 +5,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs-ruby.url = "github:bobvanderlinden/nixpkgs-ruby";
     nix-darwin = {
         url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
         inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-ruby }:
   let
     configuration = {pkgs, ... }: {
 
@@ -55,6 +56,8 @@
           pkgs.direnv
           pkgs.devenv
           pkgs.git-lfs
+          pkgs.terraform
+          pkgs.awscli2
           # For Lazyvim
           pkgs.neovim
           pkgs.lazygit
@@ -63,11 +66,12 @@
           pkgs.fd
           # Langs
           pkgs.cargo
-          pkgs.nodejs_24
           pkgs.uv
-          pkgs.ruby
           pkgs.python313
+          nixpkgs-ruby.packages.${pkgs.system}."ruby-3.2"
+          pkgs.nodejs_24
           pkgs.biome
+          pkgs.pnpm
           # Mac Apps
           pkgs.rectangle
           pkgs.obsidian
@@ -89,6 +93,8 @@
             "orbstack"
             "scroll-reverser"
             "todoist-app"
+            "pdf-expert"
+            "httpie-desktop"
             # Already installed in current setup but leaving
             # here for next time
             # "1password"
