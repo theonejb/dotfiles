@@ -58,6 +58,7 @@
           pkgs.git-lfs
           pkgs.terraform
           pkgs.awscli2
+          pkgs.watchman
           # For Lazyvim
           pkgs.neovim
           pkgs.lazygit
@@ -72,6 +73,7 @@
           pkgs.nodejs_24
           pkgs.biome
           pkgs.pnpm
+          pkgs.zulu17
           # Mac Apps
           pkgs.rectangle
           pkgs.obsidian
@@ -95,6 +97,7 @@
             "todoist-app"
             "pdf-expert"
             "httpie-desktop"
+            "localsend"
             # Already installed in current setup but leaving
             # here for next time
             # "1password"
