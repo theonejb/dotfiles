@@ -10,4 +10,3 @@ uv = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "python"]
-python.uv_venv_auto = true
