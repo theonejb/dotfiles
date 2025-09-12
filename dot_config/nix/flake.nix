@@ -59,7 +59,6 @@
             pkgs.terraform
             pkgs.awscli2
             pkgs.watchman
-            # nixfmt ; mostly for nvim
             pkgs.nixfmt-rfc-style
             # For Lazyvim
             pkgs.neovim
@@ -74,6 +73,7 @@
             pkgs.obsidian
             pkgs.vscode
             pkgs.zoom-us
+            pkgs.utm # Virtual Machines
           ];
 
           homebrew = {
@@ -85,6 +85,7 @@
             brews = [
               # Needed to install Ruby using Mise
               "libyaml"
+              "flyctl"
             ];
 
             casks = [
