@@ -96,6 +96,7 @@
               "pdf-expert"
               "httpie-desktop"
               "localsend"
+              "ungoogled-chromium" # Not available as a nixpkg
               # Already installed in current setup but leaving
               # here for next time
               # "1password"
