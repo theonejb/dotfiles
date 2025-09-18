@@ -60,6 +60,7 @@
             pkgs.awscli2
             pkgs.watchman
             pkgs.nixfmt-rfc-style
+            pkgs.gh
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
