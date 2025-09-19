@@ -5,7 +5,7 @@ node = "24"
 "npm:pnpm" = "latest"
 "npm:@sourcegraph/amp" = "latest"
 python = "3.13"
-ruby = "3.2"
+ruby = "3.2.9"
 rust = "latest"
 uv = "latest"
 
