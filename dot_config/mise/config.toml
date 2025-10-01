@@ -8,6 +8,9 @@ python = "3.13"
 ruby = "3.2.9"
 rust = "latest"
 uv = "latest"
+bun = "1.2.23"
+"npm:@openai/codex" = "latest"
+"npm:eas-cli" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "python"]
