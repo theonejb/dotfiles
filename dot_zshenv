@@ -4,6 +4,7 @@ alias pwdcp='pwd | pbcopy'
 alias r="./bin/rails"
 alias pn=pnpm
 alias cz=chezmoi
+alias sg=ast-grep
 
 export EDITOR=nvim
 export ANDROID_HOME=$HOME/Library/Android/sdk

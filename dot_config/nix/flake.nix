@@ -61,6 +61,7 @@
             pkgs.watchman
             pkgs.nixfmt-rfc-style
             pkgs.gh
+            pkgs.ast-grep
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
