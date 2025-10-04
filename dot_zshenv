@@ -1,10 +1,10 @@
-alias dup='sudo darwin-rebuild switch --flake /Users/jibran/.config/nix'
+alias dup="sudo darwin-rebuild switch --flake /Users/jibran/.config/nix"
 alias vim=nvim
-alias pwdcp='pwd | pbcopy'
+alias pwdcp="pwd | pbcopy"
 alias r="./bin/rails"
 alias pn=pnpm
 alias cz=chezmoi
-alias sg=ast-grep
+alias sg="ast-grep -p"
 
 export EDITOR=nvim
 export ANDROID_HOME=$HOME/Library/Android/sdk
