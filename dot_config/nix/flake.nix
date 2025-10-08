@@ -54,7 +54,6 @@
             # Other dev utils
             pkgs.zellij
             pkgs.direnv
-            pkgs.devenv
             pkgs.git-lfs
             pkgs.terraform
             pkgs.awscli2
@@ -62,6 +61,7 @@
             pkgs.nixfmt-rfc-style
             pkgs.gh
             pkgs.ast-grep
+            pkgs.act # Github actions local
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
