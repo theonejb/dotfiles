@@ -1,3 +1,5 @@
+export EDITOR=nvim
+
 alias vim=nvim
 alias r="./bin/rails"
 alias pn=pnpm
