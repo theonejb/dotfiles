@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
+DISABLE_AUTO_TITLE="true"
 plugins=(git direnv fzf common-aliases)
 source $ZSH/oh-my-zsh.sh
 
