@@ -1,6 +1,0 @@
-path=("/Users/jibran/.local/bin" "/opt/homebrew/bin" "/Users/jibran/Library/Application Support/JetBrains/Toolbox/scripts" $path "$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools")
-export PATH
-
-# Added by OrbStack: command-line tools and integration
-# This won't be added again if you remove it.
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :

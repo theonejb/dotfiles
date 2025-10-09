@@ -1,11 +1,9 @@
-alias dup="sudo darwin-rebuild switch --flake /Users/jibran/.config/nix"
 alias vim=nvim
-alias pwdcp="pwd | pbcopy"
 alias r="./bin/rails"
 alias pn=pnpm
 alias cz=chezmoi
 alias sg="ast-grep -p"
 
-export EDITOR=nvim
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export JAVA_HOME=/nix/store/824lvh6p4z5b0dnqgw50ff5ab4vd3l5x-zulu-ca-jdk-17.0.12/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+if [[ -s $HOME/.zshenv.local ]]; then
+  source $HOME/.zshenv.local
+fi
