@@ -8,3 +8,4 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(mise activate zsh)"
 
+[ -s "$HOME/.zsh_after_oh_my_zsh" ] && source "$HOME/.zsh_after_oh_my_zsh"
