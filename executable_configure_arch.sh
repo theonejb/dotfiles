@@ -7,7 +7,8 @@ sudo pacman -S \
   extra/terraform extra/tflint \
   extra/aws-cli-v2 \
   extra/ast-grep \
-  extra/ttf-jetbrains-mono-nerd
+  extra/ttf-jetbrains-mono-nerd \
+  extra/wev
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
