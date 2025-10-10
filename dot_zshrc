@@ -7,5 +7,10 @@ source $ZSH/oh-my-zsh.sh
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 [ -s "$HOME/.zsh_after_oh_my_zsh" ] && source "$HOME/.zsh_after_oh_my_zsh"
+
+export FLYCTL_INSTALL="$HOME/.fly"
+path+=("$FLYCTL_INSTALL/bin")
+export PATH

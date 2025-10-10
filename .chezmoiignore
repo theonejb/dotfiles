@@ -2,3 +2,7 @@
 .config/karabiner
 .config/nix
 {{ end }}
+
+{{- if ne .chezmoi.os "linux" }}
+configure_arch.sh
+{{ end }}
