@@ -5,5 +5,5 @@
 
 {{- if ne .chezmoi.os "linux" }}
 configure_arch.sh
-dot_config/hypr/bindings.conf
+dot_config/hypr
 {{ end }}
