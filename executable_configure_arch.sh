@@ -8,7 +8,8 @@ sudo pacman -S \
   extra/aws-cli-v2 \
   extra/ast-grep \
   extra/ttf-jetbrains-mono-nerd \
-  extra/wev
+  extra/wev \
+  extra/zeal
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
