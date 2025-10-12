@@ -12,7 +12,3 @@ eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 
 [ -s "$HOME/.zsh_after_oh_my_zsh" ] && source "$HOME/.zsh_after_oh_my_zsh"
-
-export FLYCTL_INSTALL="$HOME/.fly"
-path+=("$FLYCTL_INSTALL/bin")
-export PATH

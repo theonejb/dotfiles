@@ -9,7 +9,11 @@ sudo pacman -S \
   extra/ast-grep \
   extra/ttf-jetbrains-mono-nerd \
   extra/wev \
-  extra/zeal
+  extra/zeal \
+  extra/apparmor
+
+sudo yay -S \
+  snapd
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
