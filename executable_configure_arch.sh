@@ -15,6 +15,10 @@ sudo pacman -S \
 sudo yay -S \
   snapd
 
+sudo snap install \
+  mailspring \
+  ferdium
+
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
 fi
