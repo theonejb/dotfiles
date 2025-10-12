@@ -6,4 +6,5 @@
 {{- if ne .chezmoi.os "linux" }}
 configure_arch.sh
 dot_config/hypr
+dot_local
 {{ end }}
