@@ -1,8 +1,10 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 DISABLE_AUTO_TITLE="true"
 plugins=(direnv fzf)
 source $ZSH/oh-my-zsh.sh
+
+eval "$(starship init zsh)"
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
