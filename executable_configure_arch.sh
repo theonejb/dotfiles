@@ -10,14 +10,11 @@ sudo pacman -S \
   extra/ttf-jetbrains-mono-nerd \
   extra/wev \
   extra/zeal \
-  extra/apparmor
+  extra/apparmor \
+  extra/ddcutil
 
 sudo yay -S \
   snapd
-
-sudo snap install \
-  mailspring \
-  ferdium
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
