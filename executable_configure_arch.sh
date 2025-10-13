@@ -14,7 +14,8 @@ sudo pacman -S \
   extra/ddcutil
 
 sudo yay -S \
-  snapd
+  snapd \
+  ferdium-bin
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
