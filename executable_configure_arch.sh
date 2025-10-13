@@ -11,8 +11,7 @@ sudo pacman -S \
   extra/wev \
   extra/zeal \
   extra/apparmor \
-  extra/ddcutil \
-  extra/evolution
+  extra/ddcutil
 
 sudo yay -S \
   snapd
