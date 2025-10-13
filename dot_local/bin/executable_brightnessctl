@@ -1,0 +1,121 @@
+#!/bin/bash
+
+# Emulated brightnessctl script for monitors not supported by the real brightnessctl
+# This script mimics the CLI interface that SwayOSD expects from brightnessctl
+# Uses ddcutil to control monitor brightness via DDC/CI
+
+# Helper function to parse ddcutil output
+# ddcutil getvcp 10 outputs: "VCP code 0x10 (Brightness): current value = 50, max value = 100"
+get_ddcutil_values() {
+    local output=$(ddcutil getvcp 10 2>/dev/null)
+    if [ $? -ne 0 ]; then
+        return 1
+    fi
+
+    # Extract current and max values using grep and sed
+    CURRENT=$(echo "$output" | grep -oP 'current value =\s*\K\d+')
+    MAX=$(echo "$output" | grep -oP 'max value =\s*\K\d+')
+
+    return 0
+}
+
+# Parse arguments
+DEVICE=""
+COMMAND=""
+VALUE=""
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --device|-d)
+            DEVICE="$2"
+            shift 2
+            ;;
+        info|get|max)
+            COMMAND="$1"
+            shift
+            ;;
+        set)
+            COMMAND="set"
+            VALUE="$2"
+            shift 2
+            ;;
+        *)
+            shift
+            ;;
+    esac
+done
+
+# Execute commands based on what SwayOSD expects
+case "$COMMAND" in
+    info)
+        # Check if ddcutil can communicate with the monitor
+        # SwayOSD uses this to check if the device exists
+        if get_ddcutil_values; then
+            exit 0
+        else
+            exit 1
+        fi
+        ;;
+
+    get)
+        # Return current brightness value
+        # SwayOSD expects just a numeric value on stdout
+        if get_ddcutil_values; then
+            echo "$CURRENT"
+        else
+            echo "0"
+            exit 1
+        fi
+        ;;
+
+    max)
+        # Return maximum brightness value
+        # SwayOSD expects just a numeric value on stdout
+        if get_ddcutil_values; then
+            echo "$MAX"
+        else
+            echo "100"
+            exit 1
+        fi
+        ;;
+
+    set)
+        # Set brightness to the specified percentage
+        # Value comes in format like "75%" - need to extract the number
+        PERCENT=$(echo "$VALUE" | sed 's/%//')
+
+        # Get max value to calculate absolute brightness
+        if ! get_ddcutil_values; then
+            echo "Failed to communicate with monitor" >&2
+            exit 1
+        fi
+
+        # Clamp to valid range
+        if [ "$PERCENT" -lt 0 ]; then
+            PERCENT=0
+        elif [ "$PERCENT" -gt 100 ]; then
+            PERCENT=100
+        fi
+
+        # Calculate absolute value from percentage
+        ABSOLUTE=$((PERCENT * MAX / 100))
+
+        # Set brightness using ddcutil (VCP code 10 = Brightness)
+        ddcutil setvcp 10 "$ABSOLUTE" 2>/dev/null
+
+        if [ $? -eq 0 ]; then
+            # Output the absolute value that was set
+            echo "$ABSOLUTE"
+        else
+            echo "Failed to set brightness" >&2
+            exit 1
+        fi
+        ;;
+
+    *)
+        echo "Unknown command: $COMMAND" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
