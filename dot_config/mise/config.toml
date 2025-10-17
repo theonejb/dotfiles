@@ -12,6 +12,7 @@ bun = "1.2.23"
 "npm:@openai/codex" = "latest"
 "npm:eas-cli" = "latest"
 usage = "latest"
+java = "21"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "python"]
