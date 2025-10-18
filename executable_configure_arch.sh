@@ -11,7 +11,9 @@ sudo pacman -S \
   extra/wev \
   extra/zeal \
   extra/apparmor \
-  extra/ddcutil
+  extra/ddcutil \
+  extra/discord \
+  extra/slack-desktop-wayland
 
 sudo yay -S \
   snapd \
