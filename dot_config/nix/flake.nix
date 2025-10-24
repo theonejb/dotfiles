@@ -62,6 +62,8 @@
             pkgs.gh
             pkgs.ast-grep
             pkgs.act # Github actions local
+            pkgs.starship
+            pkgs.zoxide
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
