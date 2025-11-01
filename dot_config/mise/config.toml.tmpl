@@ -1,18 +1,20 @@
 [tools]
-node = "24"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@biomejs/biome" = "2.2.2"
-"npm:pnpm" = "latest"
-"npm:@sourcegraph/amp" = "latest"
 "npm:@openai/codex" = "latest"
+"npm:@sourcegraph/amp" = "latest"
 "npm:eas-cli" = "latest"
+"npm:opencode-ai" = "latest"
+"npm:pnpm" = "latest"
+bun = "1.2.23"
+node = "24"
 python = "3.13"
 ruby = "3.2.9"
 rust = "latest"
-uv = "latest"
-bun = "1.2.23"
-{{- if eq .chezmoi.os "linux"}}
 usage = "latest"
+uv = "latest"
+
+{{- if eq .chezmoi.os "linux"}}
 java = "21"
 {{ end }}
 
