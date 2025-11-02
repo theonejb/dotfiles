@@ -5,6 +5,7 @@
 
 {{- if ne .chezmoi.os "linux" }}
 configure_arch.sh
-dot_config/hypr
-dot_local
+.config/hypr
+.local
+.zsh_after_oh_my_zsh
 {{ end }}
