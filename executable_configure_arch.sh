@@ -13,7 +13,7 @@ sudo pacman -S \
   extra/apparmor \
   extra/ddcutil \
   extra/discord \
-  extra/slack-desktop-wayland
+  extra/wget
 
 sudo yay -S \
   snapd \
