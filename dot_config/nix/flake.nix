@@ -70,8 +70,6 @@
             pkgs.fzf
             pkgs.ripgrep
             pkgs.fd
-            # Langs
-            pkgs.zulu17
             # Mac Apps
             pkgs.rectangle
             pkgs.obsidian
