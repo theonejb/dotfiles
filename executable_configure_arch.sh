@@ -12,12 +12,11 @@ sudo pacman -S \
   extra/zeal \
   extra/apparmor \
   extra/ddcutil \
-  extra/discord \
   extra/wget
 
 sudo yay -S \
-  snapd \
-  ferdium-bin
+  ferdium-bin \
+  discord_arch_electron
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
