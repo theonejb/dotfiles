@@ -64,6 +64,7 @@
             pkgs.act # Github actions local
             pkgs.starship
             pkgs.zoxide
+            pkgs.jujutsu
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
