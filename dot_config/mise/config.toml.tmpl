@@ -14,10 +14,11 @@ ruby = "3.2.9"
 rust = "latest"
 usage = "latest"
 uv = "latest"
-java = "25"
 
 {{- if eq .chezmoi.os "linux"}}
 java = "21"
+{{ else }}
+java = "25"
 {{ end }}
 
 [settings]

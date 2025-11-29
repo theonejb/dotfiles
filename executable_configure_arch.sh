@@ -1,6 +1,7 @@
 sudo pacman -S \
   httpie \
   act \
+  jujutsu \
   extra/zellij \
   extra/direnv \
   extra/git-lfs \
