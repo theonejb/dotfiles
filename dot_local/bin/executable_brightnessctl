@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BUS=10
+
 # Emulated brightnessctl script for monitors not supported by the real brightnessctl
 # This script mimics the CLI interface that SwayOSD expects from brightnessctl
 # Uses ddcutil to control monitor brightness via DDC/CI
@@ -7,7 +9,7 @@
 # Helper function to parse ddcutil output
 # ddcutil getvcp 10 outputs: "VCP code 0x10 (Brightness): current value = 50, max value = 100"
 get_ddcutil_values() {
-    local output=$(ddcutil --bus 9 getvcp 10 2>/dev/null)
+    local output=$(ddcutil --bus $BUS getvcp 10 2>/dev/null)
     if [ $? -ne 0 ]; then
         return 1
     fi
@@ -101,7 +103,7 @@ case "$COMMAND" in
         ABSOLUTE=$((PERCENT * MAX / 100))
 
         # Set brightness using ddcutil (VCP code 10 = Brightness)
-        ddcutil --bus 9 setvcp 10 "$ABSOLUTE" 2>/dev/null
+        ddcutil --bus $BUS setvcp 10 "$ABSOLUTE" 2>/dev/null
 
         if [ $? -eq 0 ]; then
             # Output the absolute value that was set
