@@ -49,8 +49,6 @@
           security.pam.services.sudo_local.touchIdAuth = true;
 
           environment.systemPackages = [
-            # Mise dev env manager
-            pkgs.mise
             # Other dev utils
             pkgs.zellij
             pkgs.direnv
@@ -89,6 +87,8 @@
               # Needed to install Ruby using Mise
               "libyaml"
               "flyctl"
+              # Installed via brew to get the latest version
+              "mise"
             ];
 
             casks = [
