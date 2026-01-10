@@ -101,6 +101,8 @@
               "localsend"
               "ungoogled-chromium" # Not available as a nixpkg
               "handy" # Speech to text
+              "session-manager-plugin"
+              "mongodb-compass"
               # Already installed in current setup but leaving
               # here for next time
               # "1password"
