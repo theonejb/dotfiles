@@ -15,9 +15,9 @@ sudo pacman -S \
   extra/ddcutil \
   extra/wget
 
-sudo yay -S \
+yay -S \
   ferdium-bin \
-  discord_arch_electron
+  mongodb-compass
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
