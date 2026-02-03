@@ -2,18 +2,25 @@ sudo pacman -S \
   httpie \
   act \
   jujutsu \
-  extra/zellij \
-  extra/direnv \
-  extra/git-lfs \
-  extra/terraform extra/tflint \
-  extra/aws-cli-v2 \
-  extra/ast-grep \
-  extra/ttf-jetbrains-mono-nerd \
-  extra/wev \
-  extra/zeal \
-  extra/apparmor \
-  extra/ddcutil \
-  extra/wget
+  zellij \
+  direnv \
+  git-lfs \
+  terraform extra/tflint \
+  aws-cli-v2 \
+  ast-grep \
+  ttf-jetbrains-mono-nerd \
+  wev \
+  zeal \
+  apparmor \
+  ddcutil \
+  wget \
+  pandoc-cli \
+  texlive-latex \
+  texlive-latexextra \
+  texlive-plaingeneric \
+  texlive-fontsrecommended \
+  texlive-fontsextra \
+  texlive-binextra
 
 yay -S \
   ferdium-bin \
