@@ -63,6 +63,7 @@
             pkgs.starship
             pkgs.zoxide
             pkgs.jujutsu
+            pkgs.httpie
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
@@ -81,7 +82,9 @@
             enable = true;
             onActivation.cleanup = "uninstall";
 
-            taps = [ ];
+            taps = [
+              "oug-t/difi"
+            ];
 
             brews = [
               # Needed to install Ruby using Mise
@@ -89,6 +92,7 @@
               "flyctl"
               # Installed via brew to get the latest version
               "mise"
+              "oug-t/difi/difi"
             ];
 
             casks = [
