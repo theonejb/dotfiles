@@ -23,8 +23,7 @@ sudo pacman -S \
   texlive-binextra
 
 yay -S \
-  ferdium-bin \
-  mongodb-compass
+  ferdium-bin
 
 if [[ ! -v FLYCTL_INSTALL ]] ; then
   curl -L https://fly.io/install.sh | sh
