@@ -76,6 +76,7 @@
             pkgs.vscode
             pkgs.zoom-us
             pkgs.utm # Virtual Machines
+            pkgs.terminal-notifier
           ];
 
           homebrew = {
