@@ -20,7 +20,9 @@ sudo pacman -S \
   texlive-plaingeneric \
   texlive-fontsrecommended \
   texlive-fontsextra \
-  texlive-binextra
+  texlive-binextra \
+  virtualbox \
+  virtualbox-host-modules-arch
 
 yay -S \
   ferdium-bin
