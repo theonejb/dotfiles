@@ -9,3 +9,12 @@ configure_arch.sh
 .local
 .zsh_after_oh_my_zsh
 {{ end }}
+
+{{- if .is_vm }}
+configure_arch.sh
+.config/**
+!.config/zellij
+!.config/zellij/**
+.local
+.local/**
+{{ end }}
