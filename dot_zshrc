@@ -27,15 +27,13 @@ autoload -Uz colors && colors
 export CLICOLOR=1  # macOS ls colors
 
 # Plugins replacement
+eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 eval "$(fzf --zsh)"
-
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-
-eval "$(mise activate zsh)"
-eval "$(zoxide init zsh)"
 
 [ -s "$HOME/.zsh_after_oh_my_zsh" ] && source "$HOME/.zsh_after_oh_my_zsh"
 [ -s "$HOME/.claude/env-setup.sh" ] && export CLAUDE_ENV_FILE="$HOME/.claude/env-setup.sh"
