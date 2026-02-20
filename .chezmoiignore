@@ -12,9 +12,9 @@ configure_arch.sh
 
 {{- if .is_vm }}
 configure_arch.sh
-.config/**
-!.config/zellij
-!.config/zellij/**
 .local
-.local/**
+.config/hypr
+.config/mise
+.config/nix
+.config/private_karabiner
 {{ end }}

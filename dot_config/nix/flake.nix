@@ -84,7 +84,6 @@
             onActivation.cleanup = "uninstall";
 
             taps = [
-              "oug-t/difi"
             ];
 
             brews = [
@@ -93,7 +92,7 @@
               "flyctl"
               # Installed via brew to get the latest version
               "mise"
-              "oug-t/difi/difi"
+              "mosh"
             ];
 
             casks = [
