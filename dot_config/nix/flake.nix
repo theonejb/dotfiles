@@ -93,10 +93,12 @@
               # Installed via brew to get the latest version
               "mise"
               "mosh"
+              "mkcert"
             ];
 
             casks = [
               "ghostty"
+              "kitty"
               "orbstack"
               "scroll-reverser"
               "todoist-app"
