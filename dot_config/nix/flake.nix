@@ -64,6 +64,7 @@
             pkgs.zoxide
             pkgs.jujutsu
             pkgs.httpie
+            pkgs.imagemagick
             # For Lazyvim
             pkgs.neovim
             pkgs.lazygit
@@ -94,6 +95,7 @@
               "mise"
               "mosh"
               "mkcert"
+              "stripe/stripe-cli/stripe"
             ];
 
             casks = [
