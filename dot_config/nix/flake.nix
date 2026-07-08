@@ -85,6 +85,7 @@
             onActivation.cleanup = "uninstall";
 
             taps = [
+              "ampcode/tap"
             ];
 
             brews = [
@@ -96,6 +97,7 @@
               "mosh"
               "mkcert"
               "stripe/stripe-cli/stripe"
+              "ampcode/tap/ampcode"
             ];
 
             casks = [
