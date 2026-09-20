@@ -5,6 +5,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs-zellij.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +17,7 @@
       self,
       nix-darwin,
       nixpkgs,
+      nixpkgs-zellij,
     }:
     let
       configuration =
@@ -50,7 +52,7 @@
 
           environment.systemPackages = [
             # Other dev utils
-            pkgs.zellij
+            nixpkgs-zellij.legacyPackages.aarch64-darwin.zellij
             pkgs.direnv
             pkgs.git-lfs
             pkgs.terraform
