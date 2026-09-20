@@ -1,0 +1,7 @@
+onboarding = false
+
+[keys]
+focus_pane_left = ["prefix+h", "alt+left"]
+focus_pane_right = ["prefix+l", "alt+right"]
+previous_tab = ["prefix+p", "alt+p"]
+next_tab = ["prefix+n", "alt+n"]
