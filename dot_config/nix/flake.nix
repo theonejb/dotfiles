@@ -82,11 +82,17 @@
 
           homebrew = {
             enable = true;
-            onActivation.cleanup = "uninstall";
+            onActivation = {
+              cleanup = "none"; # Prevent nix-darwin emitting the disabled --cleanup
+              extraFlags = [ "--force-cleanup" ];
+            };
 
-            taps = [
-              "ampcode/tap"
-            ];
+            # Homebrew 7 requires third-party taps to be explicitly trusted.
+            # nix-darwin does not yet expose the Brewfile `trusted` tap option.
+            extraConfig = ''
+              tap "stripe/stripe-cli", trusted: true
+              tap "ampcode/tap", trusted: true
+            '';
 
             brews = [
               # Needed to install Ruby using Mise
@@ -96,8 +102,10 @@
               "mise"
               "mosh"
               "mkcert"
+              "herdr"
               "stripe/stripe-cli/stripe"
               "ampcode/tap/ampcode"
+              "helix"
             ];
 
             casks = [
