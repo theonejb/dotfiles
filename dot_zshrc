@@ -32,8 +32,9 @@ export CLICOLOR=1  # macOS ls colors
 eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+alias cd=z
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
